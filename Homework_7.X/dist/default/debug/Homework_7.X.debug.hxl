@@ -1,0 +1,38 @@
+### HEXMate logfile and output summary ###
+
+### Command-line arguments ###
+ C:\Users\schop\AppData\Local\Temp\xcAsj5s.0\driver_tmp_3.o
+ -Odist/default/debug\Homework_7.X.debug.hex
+ -logfile=dist/default/debug\Homework_7.X.debug.hxl
+ -addressing=1
+ -break=300000
+
+### Memory Usage ###
+ Input file ranges:
+  0h - 5h		(C:\Users\schop\AppData\Local\Temp\xcAsj5s.0\driver_tmp_3.o)
+  300h - 33Fh		(C:\Users\schop\AppData\Local\Temp\xcAsj5s.0\driver_tmp_3.o)
+  1D3Ch - 1D3Fh		(C:\Users\schop\AppData\Local\Temp\xcAsj5s.0\driver_tmp_3.o)
+  300000h - 300007h		(C:\Users\schop\AppData\Local\Temp\xcAsj5s.0\driver_tmp_3.o)
+ Unused ranges:
+  6h - 2FFh
+  340h - 1D3Bh
+  1D40h - 2FFFFFh
+
+### Hex Memory Map ###
+ Legend:
+  -- = Unused memory
+  H1 = Input file             (C:\Users\schop\AppData\Local\Temp\xcAsj5s.0\driver_tmp_3.o)
+----------------------------------------------------------
+         | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+----------------------------------------------------------
+00000000 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
+----------------------------------------------------------
+00000300 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000310 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000320 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000330 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+----------------------------------------------------------
+00001D30 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
+----------------------------------------------------------
+00300000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+00300010 | --
