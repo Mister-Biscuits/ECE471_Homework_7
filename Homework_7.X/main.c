@@ -17,10 +17,10 @@
 
 void init_eusart() {
     // 1. Set Pin Directions (RC6 = TX, RC7 = RX)
-    TRISCbits.TRISC6 = 0; // TX is an output
-    TRISCbits.TRISC7 = 1; // RX is an input
+    TRISCbits.TRISC6 = 0; // TX output
+    TRISCbits.TRISC7 = 1; // RX input
 
-    // 2. Configure Baud Rate (Assuming 8MHz Fosc for 9600 Baud)
+    // 2. Configure Baud Rate
     TXSTAbits.SYNC = 0;    // Asynchronous mode
     TXSTAbits.BRGH = 0;    // Low speed
     BAUDCONbits.BRG16 = 0; // 8-bit Baud rate generator
@@ -50,24 +50,23 @@ void init_external_interrupt(){
 }
 
 void __interrupt(low_priority) other_pic_isr(){
-    // SENDER LOGIC: If our local button (INT0) is pressed
+    // Sender
     if (INTCONbits.INT0IF) {
         TXREG = 'X';         // Send toggle command to the other PIC
-        //PORTDbits.RD3 ^= 1;  // Toggle our local LED
         INTCONbits.INT0IF = 0;
     }
 
-    // RECEIVER LOGIC: If the other PIC sent a command
+    // Receiver
     if (PIR1bits.RCIF) {
         char receive = RCREG;  // Read the byte (clears the interrupt)
         if (receive == 'X') {
-            PORTDbits.RD3 ^= 1; // Toggle our local LED
+            PORTDbits.RD3 ^= 1; // Toggle local LED
         }
     }
 }
 
 //Green will indicate the 'heartbeat' for each PIC, blue the interrupt from the other 
-//Green will be RD3 Blue RD22
+//Green will be RD3 Blue RD2
 void main(void) {
     //Set RD2-3 to output and to logic low
     
